@@ -1,4 +1,4 @@
-package com.alekseik.koinsdkexample.ui
+package com.alekseik.koinsdkexample
 
 import android.app.Application
 import com.alekseik.core.network.di.networkModule

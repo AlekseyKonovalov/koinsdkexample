@@ -21,6 +21,12 @@ object MySdk {
         profileModule
     )
 
+    /**
+     * Инициализирует DI в SDK
+     *
+     * @param context Application context
+     * @param useGlobalKoin Передать true, если в проекте используется Koin, иначе false
+     * */
     fun initialize(
         context: Context,
         useGlobalKoin: Boolean = false
@@ -37,7 +43,10 @@ object MySdk {
         isInitialized = true
     }
 
-
+    /**
+     * Точка входа в SDK
+     *
+     * */
     @Composable
     fun SdkEntryPoint() {
         MainScreen()

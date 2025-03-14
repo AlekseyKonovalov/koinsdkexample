@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":core:network"))
+    implementation(project(":feature:main"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:profile"))
 

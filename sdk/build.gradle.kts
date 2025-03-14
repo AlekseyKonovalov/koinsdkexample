@@ -49,6 +49,6 @@ dependencies {
     implementation(project(":feature:auth"))
     implementation(project(":feature:profile"))
 
-    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
     implementation(libs.navigation.compose)
 }

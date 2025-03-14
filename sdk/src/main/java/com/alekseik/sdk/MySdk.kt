@@ -11,6 +11,7 @@ import com.alekseik.feature.auth.ui.LoginScreen
 import com.alekseik.feature.profile.di.profileModule
 import com.alekseik.feature.profile.ui.ProfileScreen
 import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 
 object MySdk {
@@ -18,16 +19,32 @@ object MySdk {
 
     fun initialize(
         context: Context,
+        useGlobalKoin: Boolean = false
     ) {
         if (isInitialized) return
-        
-        startKoin {
-            androidContext(context)
-            modules(
-                networkModule,
-                authModule,
-                profileModule
+        if (useGlobalKoin) {
+            loadKoinModules(
+                listOf(
+                    // core modules
+                    networkModule,
+
+                    // feature modules
+                    authModule,
+                    profileModule
+                )
             )
+        } else {
+            startKoin {
+                androidContext(context)
+                modules(
+                    // core modules
+                    networkModule,
+
+                    // feature modules
+                    authModule,
+                    profileModule
+                )
+            }
         }
         isInitialized = true
     }

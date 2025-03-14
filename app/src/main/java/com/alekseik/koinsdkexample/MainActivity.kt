@@ -17,7 +17,6 @@ import com.alekseik.sdk.MySdk
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MySdk.initialize(applicationContext)
         enableEdgeToEdge()
         setContent {
             KoinsdkexampleTheme {
